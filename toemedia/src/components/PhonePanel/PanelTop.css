@@ -1,0 +1,12 @@
+.panel-top {
+    display: flex;
+    justify-content: space-around;
+    z-index:2;
+    /* position: fixed; */
+    /* top: 0; */
+    width: 100%;
+    align-items: center;
+    /* padding: 1rem 0; */
+    background-color: #666666;
+    flex-wrap: wrap;
+}

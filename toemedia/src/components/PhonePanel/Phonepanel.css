@@ -1,0 +1,10 @@
+.bottom-panel {
+    position: fixed;
+    width: 100vw;
+    background-color:red;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}

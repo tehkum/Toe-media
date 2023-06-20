@@ -1,0 +1,80 @@
+.user-spec {
+    border-left: 1px solid rgb(224, 66, 66);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+#search-id {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: 1px solid #666666;
+    padding-left: 35px;
+}
+
+.search-id-label {
+    position: relative;
+}
+
+.search-id-label img {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+}
+
+.follow-people-block {
+    border: 1px solid #666666;
+}
+
+.follow-block {
+    display: flex;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.follow-list {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #666666;
+    padding: 1rem;
+}
+.prof-user {
+    display: flex;
+    gap: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.prof-user span p{
+    margin-top: 0;
+}
+
+
+.userPec-sec-1 {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+
+.follow-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: red;
+    color: white
+}
+
+.follow-btn:hover {
+    background-color: rgb(201, 9, 9);
+}
+
+/* .follow-block-panel */

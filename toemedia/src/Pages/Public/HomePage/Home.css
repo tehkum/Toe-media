@@ -1,0 +1,78 @@
+.home-page-head {
+    position: relative;
+    /* display: grid; */
+    /* grid-template-rows: 0.2fr 1.8fr; */
+}
+
+.home-page-title {
+    border-bottom: 1px solid rgb(224, 66, 66);
+    padding: 0 2rem;
+}
+
+.home-page-content {
+    height:90vh;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.home-page-content div {
+    border: none;
+}
+
+.new-post {
+    width: 100%;
+    word-break: break-all;
+    writing-mode: horizontal-tb !important;
+}
+
+textarea {
+    border: none;
+    resize: none;
+    font-size: 20px;
+    padding: 0.5rem
+}
+
+textarea::placeholder {
+    font-size: 20px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.new-post-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* padding: 1rem; */
+}
+
+.new-post-button {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
+
+
+.new-post-button button {
+    /* justify-self: flex-end; */
+    align-self: flex-end;
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 25px;
+}
+
+@media (max-width: 767px) {
+    .home-page-title {
+        display: none;
+    }
+}

@@ -1,0 +1,155 @@
+.navigation {
+    display: hidden;
+}
+
+.main-logo {
+    mix-blend-mode: color-dodge;
+}
+
+.profile-image-left {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.prof-user-left {
+    display: flex;
+    gap: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.prof-user span p{
+    margin-top: 0;
+}
+
+.title-username {
+    font-size: 20px
+}
+
+
+.userPec-sec-1 {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    /* .navigation {
+        
+        overflow: auto;
+        height: 100vh;
+        border-right: 1px solid rgb(224, 66, 66);
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+    }
+
+    .navigation .list-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-user {
+        position: absolute;
+        bottom: 10px;
+        padding: 0 3rem;
+    }
+
+    .nav-bullets span {
+        margin: 2rem 0;
+        font-size: 25px;
+        display: inline;
+        padding: 0 3rem;
+    }
+    
+    .nav-bullets span p {
+        padding: 0.5rem;
+    }
+
+    .nav-bullets span p:hover {
+        background-color: rgba(0, 0, 0, 0.562);
+        border-radius: 25px;
+    }
+
+
+    .navigation .list-items span img{
+        margin-right: 15px;
+        
+    }
+
+    .nav-bullets {
+        text-decoration: none;
+        color: Black;
+    }
+
+    .navigation button {
+        margin: 0 3rem;
+        padding: 1rem 1.5rem;
+        border-radius: 25px;
+        border: none;
+        background-color: rgb(224, 66, 66);
+        color: white;
+        font-size: 20px;
+        width: 150px;
+    } */
+
+
+
+    .navigation {
+        overflow: auto;
+        height: 100vh;
+        border-right: 1px solid rgb(224, 66, 66);
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+    }
+
+    .list-items {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-bullets {
+        text-decoration: none;
+        font-size: 25px;
+        padding: 0 3rem;
+        color: black;
+    }
+
+    .nav-bullets span{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-radius: 25px;
+    }
+
+    .nav-bullets span:hover {
+        background-color: rgba(0, 0, 0, 0.56);
+        border-radius: 4rem;
+    }
+
+    .navigation button {
+        margin: 1rem 3rem;
+        padding: 1rem 1.5rem;
+        border-radius: 25px;
+        border: none;
+        background-color: rgb(224, 66, 66);
+        color: white;
+        font-size: 20px;
+        width: 150px;
+    }
+
+    .nav-user {
+        position: absolute;
+        bottom: 10px;
+        padding: 0 3rem;
+    }
+
+    .main-logo {
+        margin: 0 3rem;
+    }
+}
+

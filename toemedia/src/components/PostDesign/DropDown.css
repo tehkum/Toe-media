@@ -1,0 +1,17 @@
+.dropdown-box  {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    background-color: rgba(48,48,48,1);
+    padding:0.5rem;
+    color: white
+}
+
+.dropdown-content {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.dropdown-content:hover{
+    background-color: #666666;
+}
