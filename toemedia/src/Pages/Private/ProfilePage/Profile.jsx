@@ -28,7 +28,9 @@ export default function ProfilePage() {
   }, [userId]);
 
   useEffect(()=>{
-    axios.get(`/api/posts/user/${userProfile?.username}`).then(res=>setUserSpecificPost(res.data.posts)).catch(err=>console.log(err))
+    axios.get(`/api/posts/user/${userProfile?.username}`).then(res=>setUserSpecificPost([...res.data.posts].sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    ))).catch(err=>console.log(err))
   },[userProfile])
 
   return (

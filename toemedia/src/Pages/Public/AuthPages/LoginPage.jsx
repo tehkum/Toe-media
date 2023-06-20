@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../../context/AuthContext";
+import "./Authpage.css"
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   const [loginDetails, setLoginDetails] = useState({
@@ -20,17 +22,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="auth-pages">
       <div className="login-form">
-        <label htmlFor="username">
+        <h1 style={{alignSelf: "center"}}>Login</h1>
+        <label htmlFor="username">Username</label>
           <input type="text" name="username" placeholder="Username" value={loginDetails.username} onChange={handleChange}/>
-          Username
-        </label>
-        <label htmlFor="password">
+        
+        <label htmlFor="password">Password</label>
           <input type="password" name="password" placeholder="Password" value={loginDetails.password} onChange={handleChange}/>
-          Password
-        </label>
         <button onClick={()=>loginHandler(loginDetails)}>Login</button>
+        <p>New user? <Link to="/signup">Signup</Link></p>
       </div>
     </div>
   );

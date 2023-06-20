@@ -16,7 +16,9 @@ export function PostProvider({children}){
     const fetchData = async () => {
         try {
             const res = await axios.get("/api/posts");
-            setPost([...res.data.posts])
+            setPost([...res.data.posts].sort(
+                (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+              ))
         } catch (error) {
             console.log(error);
         }
