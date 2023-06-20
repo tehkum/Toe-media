@@ -10,7 +10,7 @@ import DropDown from "./DropDown";
 import { Link } from "react-router-dom";
 
 export default function PostBox({ item }) {
-  const { _id, content, username, likes } = item;
+  const { _id, content, username, likes, imageUrl } = item;
   const { userData } = useContext(useUsers);
   const [thisUser, setThisUser] = useState({});
   const { opsDispatch } = useOps();
@@ -30,17 +30,19 @@ export default function PostBox({ item }) {
           className="profile-image"
           src="https://picsum.photos/id/1/200/300"
           alt="profile"
+          style={{alignSelf: 'flex-start'}}
         />
         <span>
           <b>
             {thisUser?.firstName} {thisUser?.lastName}
           </b>
           <p>@{thisUser?.username}</p>
+          {imageUrl && <img src={imageUrl} alt="post" width="100%" height="400"/>}
         </span>
         {showDropBox ? <h2 className="drop-icon" onClick={()=>setDropBox(false)}>x</h2> : <h2 className="drop-icon" onClick={()=>setDropBox(true)}>...</h2>}
       </div>
       {/* ************************************************************************** */}
-      <Link to={`/post/${_id}`}>
+      <Link to={`/post/${_id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
       <div className="post-sec-2">
         <p>{content}</p>
       </div></Link>

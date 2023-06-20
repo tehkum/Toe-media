@@ -41,10 +41,13 @@ export default function HomePage() {
                 contenteditable="true"
                 placeholder="Kick something out of your mind....."
                 onChange={eventHandler}
+                value={userPost.content}
               />
             </div>
 
-            <button type="submit" onClick={()=>newPost(userPost)}>Post</button>
+            <button type="submit" onClick={()=>{
+              newPost(userPost)
+              }}>Post</button>
           </div>
           <hr />
           {sorted

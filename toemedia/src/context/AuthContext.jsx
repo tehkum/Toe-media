@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router";
 
@@ -7,6 +7,7 @@ export const Authenticate = createContext();
 export function AuthProvider({children}){
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
     const [ userDetail, setUserDetail ] = useState({})
+    const [userUpdated, setUserUpdated] = useState(false)
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -36,8 +37,24 @@ export function AuthProvider({children}){
       }
     }
 
+    const updateUser = async () => {
+      try {
+        const res = await axios.get(`/api/users/${userDetail?._id}`)
+        setUserDetail(res.data.user)
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-    return <Authenticate.Provider value={{isLoggedIn, loginHandler, setIsLoggedIn, userDetail, signUpHandler}}>{children}</Authenticate.Provider>
+    const updateClicked = () => setUserUpdated(!userUpdated)
+
+    useEffect(()=>{
+      updateUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[userUpdated])
+
+
+    return <Authenticate.Provider value={{isLoggedIn, loginHandler, setIsLoggedIn, userDetail, signUpHandler, updateClicked}}>{children}</Authenticate.Provider>
 }
 
 export const useAuth = () => useContext(Authenticate);

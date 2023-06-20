@@ -1,0 +1,60 @@
+.modal-outer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(37, 36, 36, 0.781);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-inner {
+    border: 2px solid white;
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prof-username {
+    margin-bottom: 0;
+}
+
+.prof-name {
+    margin: 0;
+}
+
+.modal-inner input{
+    padding: 0.5rem 1rem;
+}
+
+.edit-prof-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.btn-prof-edit {
+    padding: 0.5rem 1rem;
+    color: white;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.btn-prof-cancel {
+    padding: 0.5rem 1rem;
+    color: red;
+    background-color: transparent;
+    border: 1px solid red;
+    border-radius: 20px;
+}
+

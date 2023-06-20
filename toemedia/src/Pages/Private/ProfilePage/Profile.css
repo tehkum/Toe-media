@@ -18,4 +18,10 @@
   width: 150px
 }
 
+.profile-background {
+  background-color: red;
+  margin-top: -30px;
+  padding: 2rem 1rem;
+}
+
 

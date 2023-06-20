@@ -40,6 +40,9 @@ export function PostProvider({children}){
                   authorization: localStorage.getItem("encodedToken"),
                 },
               })
+              if(res.status===200 || res.status === 201){
+                setUserPost({content:""})
+              }
               console.log(res)
             
         } catch (error) {

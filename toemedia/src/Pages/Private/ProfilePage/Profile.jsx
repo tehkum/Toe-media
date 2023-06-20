@@ -8,6 +8,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { useUsers } from "../../../context/UserContext";
 import { useOps } from "../../../context/OpsContext";
+import EditModal from "../../../components/EditModal/EditModal";
 
 export default function ProfilePage() {
   const [userProfile, setUserProfile] = useState({});
@@ -17,6 +18,7 @@ export default function ProfilePage() {
   const { checker, following } = useContext(useUsers);
   const { opsDispatch } = useOps();
   const [ userSpecificPost, setUserSpecificPost ] = useState([]);
+  const [ showEditBox, setShowEditBox ] = useState(false);
 
   useEffect(() => {
     axios
@@ -38,11 +40,13 @@ export default function ProfilePage() {
       <div className="home-page-head">
         <div className="home-page-content">
           <div className="profile-sec-1">
+            <div className="profile-background">
             <img
               className="profile-image-1"
               src="https://picsum.photos/id/1/200/300"
               alt="profile"
             />
+            </div>
             <span>
               <h2>
                 {userProfile?.firstName} {userProfile?.lastName}
@@ -52,7 +56,7 @@ export default function ProfilePage() {
               {userProfile?.profileUrl && <p><b>Portfolio URL: </b>{userProfile?.profileUrl}</p>}
             </span>
             {userProfile._id === userDetail._id ? (
-              <button className="btn btn-primary">Edit Profile</button>
+              <button className="btn btn-primary" onClick={()=>setShowEditBox(true)}>Edit Profile</button>
             ) : (
               following.find(({ _id }) => _id === userProfile._id) ? (
                 <button
@@ -97,6 +101,7 @@ export default function ProfilePage() {
             })}
         </div>
       </div>
+      <EditModal detail={userDetail} showEdit={showEditBox} setShow={setShowEditBox}/>
     </>
   );
 }

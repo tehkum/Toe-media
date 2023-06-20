@@ -33,7 +33,7 @@ export function UserProvider({ children }) {
 
   useEffect(() => {
     fetchDetails();
-  }, []);
+  }, [userData]);
 
   return <useUsers.Provider value={{ userData, checker, following }}>{children}</useUsers.Provider>;
 }

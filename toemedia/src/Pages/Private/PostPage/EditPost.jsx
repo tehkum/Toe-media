@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import "../../Public/HomePage/Home.css";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { usePost } from "../../../context/PostContext";
 
 export default function EditPost(){
     const { postId } = useParams();
     const { getPost, thisPost, editPost } = useContext(usePost);
     const [ editedPost, setEditedPost ] = useState({...thisPost})
+    const navigate = useNavigate();
 
     const eventHandler = (e) => {
         setEditedPost({...editedPost, content: e.target.value})
@@ -42,7 +43,10 @@ export default function EditPost(){
                 onChange={eventHandler}
               />
             </div>
-            <button type="submit" onClick={()=>editPost(postId,editedPost)}>Edit</button>
+            <button type="submit" onClick={()=>{
+              editPost(postId,editedPost)
+              navigate("/")
+              }}>Edit</button>
           </div>
     </div>
 </div>

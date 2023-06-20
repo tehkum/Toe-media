@@ -17,7 +17,7 @@ export default function UserSpecPage() {
       <div className="follow-list">
         {userData.filter(users=> users._id !== userDetail._id ).map((users) => (
           <div className="userPec-sec-1" key={users._id}>
-            <Link to={`/profile/${users._id}`}><div className="prof-user">
+            <Link to={`/profile/${users._id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}><div className="prof-user">
               <img
                 className="profile-image"
                 src="https://picsum.photos/id/1/200/300"

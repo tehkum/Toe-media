@@ -45,7 +45,7 @@ export default function NavigationPanel() {
           <button onClick={()=>navigate("/new-post")}>Kick</button>
       </div>
       <div className="nav-user">
-      <Link to={`/profile/${userDetail._id}`}><div className="prof-user-left">
+      <Link to={`/profile/${userDetail._id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}><div className="prof-user-left">
               <img
                 className="profile-image-left"
                 src="https://picsum.photos/id/1/200/300"
