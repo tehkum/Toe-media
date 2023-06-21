@@ -20,7 +20,7 @@ export default function UserSpecPage() {
             <Link to={`/profile/${users._id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}><div className="prof-user">
               <img
                 className="profile-image"
-                src="https://picsum.photos/id/1/200/300"
+                src={users?.profileImage ? users?.profileImage : "https://picsum.photos/id/1/200/300"}
                 alt="profile"
               />
               <span>

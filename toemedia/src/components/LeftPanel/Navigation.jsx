@@ -48,7 +48,7 @@ export default function NavigationPanel() {
       <Link to={`/profile/${userDetail._id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}><div className="prof-user-left">
               <img
                 className="profile-image-left"
-                src="https://picsum.photos/id/1/200/300"
+                src={userDetail?.profileImage ? userDetail?.profileImage : "https://picsum.photos/id/1/200/300"}
                 alt="profile"
               />
               <span>

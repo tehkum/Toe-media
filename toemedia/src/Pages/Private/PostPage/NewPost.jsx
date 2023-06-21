@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import "../../Public/HomePage/Home.css";
 import { usePost } from "../../../context/PostContext";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../../context/AuthContext";
 
 export default function NewPost() {
   const { newPost, setUserPost, userPost } = useContext(usePost);
+  const {userDetail} = useAuth();
+  const navigate = useNavigate();
 
   const eventHandler = (event) => {
     setUserPost({ ...userPost, content: event.target.value });
@@ -40,7 +44,7 @@ export default function NewPost() {
           <div className="new-post-box">
             <img
               className="profile-image"
-              src="https://picsum.photos/id/1/200/300"
+              src={userDetail?.profileImage ? userDetail?.profileImage : "https://picsum.photos/id/1/200/300"}
               alt="profile"
               width="50"
               height="50"
@@ -57,7 +61,10 @@ export default function NewPost() {
           </div>
           {userPost?.imageUrl && <img src={userPost?.imageUrl} alt="sfads" height="100" width="100" />}
           <input type="file" onChange={imageHandler} />
-          <button type="submit" onClick={() => newPost(userPost)}>
+          <button type="submit" onClick={() => {
+            newPost(userPost)
+            navigate("/")
+            }}>
             Post
           </button>
         </div>

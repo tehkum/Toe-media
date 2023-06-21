@@ -28,7 +28,7 @@ export default function PostBox({ item }) {
       <div className="post-sec-1">
         <img
           className="profile-image"
-          src="https://picsum.photos/id/1/200/300"
+          src={thisUser?.profileImage ? thisUser?.profileImage :"https://picsum.photos/id/1/200/300"}
           alt="profile"
           style={{alignSelf: 'flex-start'}}
         />
@@ -37,7 +37,6 @@ export default function PostBox({ item }) {
             {thisUser?.firstName} {thisUser?.lastName}
           </b>
           <p>@{thisUser?.username}</p>
-          {imageUrl && <img src={imageUrl} alt="post" width="100%" height="400"/>}
         </span>
         {showDropBox ? <h2 className="drop-icon" onClick={()=>setDropBox(false)}>x</h2> : <h2 className="drop-icon" onClick={()=>setDropBox(true)}>...</h2>}
       </div>
@@ -45,6 +44,7 @@ export default function PostBox({ item }) {
       <Link to={`/post/${_id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
       <div className="post-sec-2">
         <p>{content}</p>
+        {imageUrl && <img src={imageUrl} alt="post" width="100%" height="400"/>}
       </div></Link>
       {/* ************************************************************************** */}
       <div class="post-sec-3">

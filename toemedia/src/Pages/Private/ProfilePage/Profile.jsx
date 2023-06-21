@@ -43,7 +43,7 @@ export default function ProfilePage() {
             <div className="profile-background">
             <img
               className="profile-image-1"
-              src="https://picsum.photos/id/1/200/300"
+              src={userProfile?.profileImage ? userProfile?.profileImage : "https://picsum.photos/id/1/200/300"}
               alt="profile"
             />
             </div>

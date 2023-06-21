@@ -31,7 +31,7 @@ export default function HomePage() {
             <div className="new-post-box">
               <img
                 className="profile-image"
-                src="https://picsum.photos/id/1/200/300"
+                src={userDetail?.profileImage ? userDetail?.profileImage : "https://picsum.photos/id/1/200/300"}
                 alt="profile"
                 width="50"
                 height="50"

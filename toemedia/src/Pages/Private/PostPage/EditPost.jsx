@@ -2,12 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import "../../Public/HomePage/Home.css";
 import { useNavigate, useParams } from "react-router";
 import { usePost } from "../../../context/PostContext";
+import { useAuth } from "../../../context/AuthContext";
 
 export default function EditPost(){
     const { postId } = useParams();
     const { getPost, thisPost, editPost } = useContext(usePost);
     const [ editedPost, setEditedPost ] = useState({...thisPost})
     const navigate = useNavigate();
+    const { userDetail } = useAuth();
 
     const eventHandler = (e) => {
         setEditedPost({...editedPost, content: e.target.value})
@@ -28,7 +30,7 @@ export default function EditPost(){
             <div className="new-post-box">
               <img
                 className="profile-image"
-                src="https://picsum.photos/id/1/200/300"
+                src={userDetail?.profileImage ? userDetail?.profileImage : "https://picsum.photos/id/1/200/300"}
                 alt="profile"
                 width="50"
                 height="50"
