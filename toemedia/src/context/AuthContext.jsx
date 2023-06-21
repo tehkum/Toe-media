@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 export const Authenticate = createContext();
 
@@ -16,12 +17,14 @@ export function AuthProvider({children}){
           const { data, status } = await axios.post("/api/auth/login", loginDetails);
         if(status === 200 || status === 201){
             setUserDetail(data.foundUser)
+            toast.success("Login Successfully")
             setIsLoggedIn(true);
             localStorage.setItem("encodedToken",data.encodedToken);
             navigate(location?.state?.from?.pathname || "/")
         }
         } catch (error) {
           console.log(error);
+          toast.error("Wrong Credentials")
         }
       };
 
@@ -30,10 +33,13 @@ export function AuthProvider({children}){
       try {
         const res = await axios.post("/api/auth/signup", signupDetails)
         if(res.status === 200 || res.status === 201){
+          toast.success("Signup Successfully")
           navigate("/login")
         }
       } catch (error) {
         console.log(error)
+        toast.error("Error")
+
       }
     }
 
@@ -46,7 +52,11 @@ export function AuthProvider({children}){
       }
     }
 
-    const updateClicked = () => setUserUpdated(!userUpdated)
+    const updateClicked = () => {
+      setUserUpdated(!userUpdated)
+      toast.success("User Info Updated")
+      
+    }
 
     useEffect(()=>{
       updateUser();

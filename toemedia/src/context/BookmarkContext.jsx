@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const bookmarkOps = createContext();
 
@@ -34,6 +35,7 @@ export function BookmarkProvider({ children }) {
         },
       });
       console.log(res);
+      toast.success("Added to Bookmark")
     } catch (error) {
       console.log(error.message);
     }
@@ -47,6 +49,8 @@ export function BookmarkProvider({ children }) {
         },
       });
       console.log(res);
+      toast.success("Removed From Bookmark")
+
     } catch (error) {
       console.log(error.message);
     }

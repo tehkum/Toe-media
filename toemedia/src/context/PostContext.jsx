@@ -1,6 +1,7 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import { ProductReducer } from "../reducers";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const usePost = createContext();
 
@@ -44,6 +45,8 @@ export function PostProvider({children}){
                 setUserPost({content:""})
               }
               console.log(res)
+            toast.success("New post added")
+
             
         } catch (error) {
             console.log(error)
@@ -58,6 +61,8 @@ export function PostProvider({children}){
                 },
               })
               console.log(res)
+            toast.success("Post Deleted Successfully")
+
         } catch (error) {
             console.log(error)
         }
@@ -71,6 +76,7 @@ export function PostProvider({children}){
                 },
               })
               console.log(res)
+              toast.success("Edited Successfully")
         } catch (error) {
             console.log(error)
         }
