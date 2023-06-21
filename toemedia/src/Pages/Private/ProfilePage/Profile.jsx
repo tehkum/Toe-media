@@ -40,7 +40,7 @@ export default function ProfilePage() {
       <div className="home-page-head">
         <div className="home-page-content">
           <div className="profile-sec-1">
-            <div className="profile-background">
+            <div className="profile-background" style={{background: userProfile?.profileBackground ? userProfile?.profileBackground.includes("cloudinary") ? `url(${userProfile?.profileBackground})` : userProfile?.profileBackground : "red"}}>
             <img
               className="profile-image-1"
               src={userProfile?.profileImage ? userProfile?.profileImage : "https://picsum.photos/id/1/200/300"}
